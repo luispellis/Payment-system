@@ -20,12 +20,19 @@ Simular o processamento de pagamentos utilizando diferentes formas de pagamento,
 O projeto segue a estrutura padrão Maven:
 
 src/
+
 ├── main
+
 │ └── java/com/devpellis/pagamentos
+
 │ ├── dto
+
 │ ├── model
+
 │ └── service
+
 └── test
+
 └── java/com/devpellis/pagamentos
 
 
