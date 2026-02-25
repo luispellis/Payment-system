@@ -1,142 +1,142 @@
-🧩 Desafio Java — Interface e Records
-📚 Sobre o Desafio
+# 💳 Payment System - Java
 
-Este projeto tem como objetivo praticar conceitos fundamentais do Java moderno, utilizando:
+Mini sistema de processamento de pagamentos desenvolvido em Java com foco em boas práticas de arquitetura, orientação a objetos e testes unitários.
 
-interface
+## 📌 Objetivo
 
-record
+Simular o processamento de pagamentos utilizando diferentes formas de pagamento, aplicando:
 
-Polimorfismo
+- Polimorfismo
+- Strategy Pattern
+- DTO
+- Testes unitários com JUnit 5
+- Estrutura padrão Maven
+- Boas práticas de versionamento com Git
 
-Coleções (List)
+---
 
-Boas práticas de modelagem
+## 🏗️ Arquitetura do Projeto
 
-O desafio simula um sistema de pagamentos de um e-commerce, com diferentes formas de pagamento.
-
-🎯 Objetivo
-
-Desenvolver um sistema capaz de:
-
-Processar diferentes tipos de pagamento
-
-Calcular taxas específicas para cada tipo
-
-Exibir um resumo do pagamento
-
-Utilizar interface e record corretamente
-
-🏗️ Estrutura Esperada do Projeto
+O projeto segue a estrutura padrão Maven:
 
 src/
+├── main
+│ └── java/com/devpellis/pagamentos
+│ ├── dto
+│ ├── model
+│ └── service
+└── test
+└── java/com/devpellis/pagamentos
 
- ├── Pagamento.java
- 
- ├── CartaoCredito.java
- 
- ├── Pix.java
- 
- ├── Boleto.java
- 
- ├── ProcessadorPagamentos.java
- 
- └── Main.java
- 
-📌 Requisitos
 
-1️⃣ Criar a Interface Pagamento
-public interface Pagamento {
-    double calcularTaxa();
-    void processar();
-    String resumo();
-}
+### 📦 Camadas
 
-2️⃣ Criar os Records
+- **model** → Entidades e regras de negócio
+- **service** → Orquestração do processamento
+- **dto** → Objeto de transferência de dados
+- **test** → Testes unitários
 
-Todos devem implementar a interface Pagamento.
+---
 
-💳 CartaoCredito
+## 💡 Conceitos Aplicados
 
-String numeroCartao
+### ✅ Orientação a Objetos
 
-String titular
+- Interface `Pagamento`
+- Implementações:
+  - `CartaoCredito`
+  - `Pix`
+  - `Boleto`
+- Polimorfismo
+- Baixo acoplamento
 
-double valor
+---
 
-⚡ Pix
+### ✅ Strategy Pattern
 
-String chavePix
+Cada forma de pagamento implementa sua própria lógica de cálculo de taxa.
 
-double valor
+O `PagamentoService` trabalha com a abstração `Pagamento`, permitindo extensibilidade sem modificar o serviço.
 
-🧾 Boleto
+---
 
-String codigoBarras
+### ✅ DTO com Record
 
-double valor
+Utilização de `record` para:
 
-3️⃣ Regras de Negócio
-Tipo	Regra de Taxa
-Cartão de Crédito	5% do valor
-Pix	1% do valor
-Boleto	Taxa fixa de R$ 3,00
-4️⃣ Classe ProcessadorPagamentos
+'''java
+ResultadoPagamentoDTO
+Objeto imutável
 
-A classe deve:
+Apenas transporte de dados
 
-Receber uma List<Pagamento>
+Sem regras de negócio
 
-Processar todos os pagamentos
+✅ Validações e Tratamento de Erros
 
-Exibir:
+Validação de valores inválidos
 
-Tipo do pagamento
+Validação de chave Pix
 
-Valor original
+Validação de código de boleto
 
-Taxa
+Uso de IllegalArgumentException
 
-Valor final (valor + taxa)
+Princípio Fail Fast
 
-🖥️ Exemplo de Saída Esperada
-Processando pagamento via Cartão de Crédito...
-Valor: 100.0
-Taxa: 5.0
-Total: 105.0
+✅ Testes Unitários com JUnit 5
 
-Processando pagamento via Pix...
-Valor: 200.0
-Taxa: 2.0
-Total: 202.0
-🚀 Desafios Extras
+Testes implementados para:
 
- Usar instanceof com pattern matching (Java 17+)
+Fluxo feliz (cálculo correto)
 
- Criar método para calcular o total arrecadado
+Testes de exceção
 
- Validar valor no construtor do record
+Organização por classe
 
- Criar menu interativo no main
+Uso de:
 
- Implementar sealed interface
+@Test
 
-🧠 Conceitos Trabalhados
+assertEquals
 
-Programação Orientada a Objetos
+assertThrows
 
-Abstração com Interface
+✅ Estrutura Maven
 
-Imutabilidade com Records
+Projeto organizado seguindo convenção:
 
-Polimorfismo
+src/main/java
 
-Organização de código
+src/test/java
 
-🏁 Como Executar
+src/main/resources
 
-Clone o repositório
+✅ Git e Versionamento
 
-Compile o projeto
+Branch feature/estrutura-inicial
 
-Execute a classe Main
+Conventional Commits:
+
+feat
+
+refactor
+
+Histórico limpo e organizado
+
+🚀 Como Executar
+mvn clean install
+mvn test
+📈 Evolução Técnica
+
+Este projeto demonstra:
+
+Aplicação prática de OOP
+
+Separação de responsabilidades
+
+Estrutura profissional de projeto Java
+
+Escrita de testes unitários
+
+Organização e versionamento adequado
