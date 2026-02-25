@@ -1,4 +1,4 @@
-package com.devpellis.pagamentos.model;
+package main.java.com.devpellis.pagamentos.model;
 
 public record Boleto(String codigoBarras, double valor) implements Pagamento {
 

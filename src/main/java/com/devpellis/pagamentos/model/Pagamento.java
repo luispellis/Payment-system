@@ -1,4 +1,4 @@
-package com.devpellis.pagamentos.model;
+package main.java.com.devpellis.pagamentos.model;
 
 public interface Pagamento {
 
