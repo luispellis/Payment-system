@@ -1,4 +1,4 @@
-package com.devpellis.pagamentos.model;
+package main.java.com.devpellis.pagamentos.model;
 
 public record CartaoCredito(String numeroCartao, String titular, double valor ) implements Pagamento {
 

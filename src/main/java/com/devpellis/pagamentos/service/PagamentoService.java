@@ -1,7 +1,7 @@
-package com.devpellis.pagamentos.service;
+package main.java.com.devpellis.pagamentos.service;
 
-import com.devpellis.pagamentos.dto.ResultadoPagamentoDTO;
-import com.devpellis.pagamentos.model.Pagamento;
+import main.java.com.devpellis.pagamentos.dto.ResultadoPagamentoDTO;
+import main.java.com.devpellis.pagamentos.model.Pagamento;
 
 public class PagamentoService {
 

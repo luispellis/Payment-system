@@ -1,4 +1,4 @@
-package com.devpellis.pagamentos.dto;
+package main.java.com.devpellis.pagamentos.dto;
 
 public record ResultadoPagamentoDTO(
     String tipo,
